@@ -26,7 +26,7 @@ export default function init(stores) {
 
     services.forEach((service) => {
       const s = session.fromPartition(`persist:service-${service.id}`);
-      let proxyHost = 'direct://';
+      let proxyHost = '';
 
       if (config.isEnabled && (isPremiumUser || !config.isPremium)) {
         const serviceProxyConfig = stores.settings.proxy[service.id];
